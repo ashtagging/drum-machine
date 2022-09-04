@@ -9,16 +9,23 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #d3d3fe;
+    font-family: comfortaa;
 }
 
 .display {
-    height: 500px;
     background-color: rgb(92, 101, 100);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
 }
+
+.title {
+    color: white;
+    padding: 10px;
+}
+
+.display-sound {}
 
 .drum-pad {
     font-size: 3rem;
@@ -30,4 +37,5 @@ body {
     color: white;
     outline: none;
     border: none;
+    width: 90px;
 }
