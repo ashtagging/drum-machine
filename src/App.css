@@ -25,7 +25,9 @@ body {
     padding: 10px;
 }
 
-.display-sound {}
+.display-sound {
+    width: 120px;
+}
 
 .drum-pad {
     font-size: 3rem;
