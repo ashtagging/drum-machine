@@ -4,12 +4,22 @@ import { useState } from "react";
 function App() {
   const [displaySound, setDisplaySound] = useState();
 
+  const playSound = (event) => {
+    var soundName = event.target.id
+    var name = event.target.innerText
+
+    setDisplaySound(`${soundName}`)
+    var audio = document.getElementById(`${name}`)
+    audio.play()
+    
+  }
+
   return (
     <div className="App">
       <div id="drum-machine">
         <div className="display" id="display">
           <h1 className="title">Drum Machine</h1>
-          <button className="drum-pad" id="Q">
+          <button className="drum-pad" id="Heater-1" onClick={playSound}>
             Q
             <audio
               className="clip"
@@ -17,7 +27,7 @@ function App() {
               id="Q"
             ></audio>
           </button>
-          <button className="drum-pad" id="W">
+          <button className="drum-pad" id="Heater-2" onClick={playSound}>
             W
             <audio
               className="clip"
@@ -25,7 +35,7 @@ function App() {
               id="W"
             ></audio>
           </button>
-          <button className="drum-pad" id="E">
+          <button className="drum-pad" id="Heater-3" onClick={playSound}>
             E
             <audio
               className="clip"
@@ -33,7 +43,7 @@ function App() {
               id="E"
             ></audio>
           </button>
-          <button className="drum-pad" id="A">
+          <button className="drum-pad" id="Heater-4" onClick={playSound}>
             A
             <audio
               className="clip"
@@ -41,7 +51,7 @@ function App() {
               id="A"
             ></audio>
           </button>
-          <button className="drum-pad" id="S">
+          <button className="drum-pad" id="Clap" onClick={playSound}>
             S
             <audio
               className="clip"
@@ -49,7 +59,7 @@ function App() {
               id="S"
             ></audio>
           </button>
-          <button className="drum-pad" id="D">
+          <button className="drum-pad" id="Open-HH" onClick={playSound}>
             D
             <audio
               className="clip"
@@ -57,7 +67,7 @@ function App() {
               id="D"
             ></audio>
           </button>
-          <button className="drum-pad" id="Z">
+          <button className="drum-pad" id="Kick-n-Hat" onClick={playSound}>
             Z
             <audio
               className="clip"
@@ -65,7 +75,7 @@ function App() {
               src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
             ></audio>
           </button>
-          <button className="drum-pad" id="X">
+          <button className="drum-pad" id="Kick" onClick={playSound}>
             X
             <audio
               className="clip"
@@ -73,7 +83,7 @@ function App() {
               id="X"
             ></audio>
           </button>
-          <button className="drum-pad" id="C">
+          <button className="drum-pad" id="Closed-HH" onClick={playSound}>
             C
             <audio
               className="clip"
