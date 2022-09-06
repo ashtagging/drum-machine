@@ -11,7 +11,12 @@ function App() {
     setDisplaySound(`${soundName}`)
     var audio = document.getElementById(`${name}`)
     audio.play()
-    
+  }
+
+  //not working
+  const keyPress = event => {
+    console.log("hello")
+    console.log(event.target.id)
   }
 
   return (
@@ -19,7 +24,7 @@ function App() {
       <div id="drum-machine">
         <div className="display" id="display">
           <h1 className="title">Drum Machine</h1>
-          <button className="drum-pad" id="Heater-1" onClick={playSound}>
+          <button className="drum-pad" id="Heater-1" onClick={playSound} onKeyPress={keyPress}>
             Q
             <audio
               className="clip"
@@ -27,7 +32,7 @@ function App() {
               id="Q"
             ></audio>
           </button>
-          <button className="drum-pad" id="Heater-2" onClick={playSound}>
+          <button className="drum-pad" id="Heater-2" onClick={playSound} onKeyPress={playSound}>
             W
             <audio
               className="clip"
