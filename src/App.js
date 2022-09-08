@@ -1,43 +1,86 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [displaySound, setDisplaySound] = useState();
+  const [displaySound, setDisplaySound] = useState("");
 
   const playSound = (event) => {
-    var soundName = event.target.id
-    var name = event.target.innerText
+    var soundName = event.target.id;
+    var name = event.target.innerText;
 
-    setDisplaySound(`${soundName}`)
-    var audio = document.getElementById(`${name}`)
-    audio.play()
-  }
+    setDisplaySound(`${soundName}`);
+    var audio = document.getElementById(`${name}`);
+    audio.play();
+  };
 
-  //not working
-  const keyPress = event => {
-    console.log("hello")
-    console.log(event.target.id)
-  }
+  const detectKeyDown = (event) => {
+    switch (event.key) {
+      case "q":
+        document.getElementById("Q").play();
+        setDisplaySound("Heater-1");
+        break;
+      case "w":
+        document.getElementById("W").play();
+        setDisplaySound("Heater-2");
+        break;
+      case "e":
+        document.getElementById("E").play();
+        setDisplaySound("Heater-3");
+        break;
+      case "a":
+        document.getElementById("A").play();
+        setDisplaySound("Heater-4");
+        break;
+      case "s":
+        document.getElementById("S").play();
+        setDisplaySound("Clap");
+        break;
+      case "d":
+        document.getElementById("D").play();
+        setDisplaySound("Open-HH");
+        break;
+      case "z":
+        document.getElementById("Z").play();
+        setDisplaySound("Kick-n-Hat");
+        break;
+      case "x":
+        document.getElementById("X").play();
+        setDisplaySound("Kick");
+        break;
+      case "c":
+        document.getElementById("C").play();
+        setDisplaySound("Closed-HH");
+        break;
+      default:
+        break;
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keypress", detectKeyDown, true);
+  }, []);
 
   return (
     <div className="App">
       <div id="drum-machine">
         <div className="display" id="display">
           <h1 className="title">Drum Machine</h1>
-          <button className="drum-pad" id="Heater-1" onClick={playSound} onKeyPress={keyPress}>
+          <button className="drum-pad" id="Heater-1" onClick={playSound}>
             Q
             <audio
               className="clip"
               src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
               id="Q"
+              preload='auto'
             ></audio>
           </button>
-          <button className="drum-pad" id="Heater-2" onClick={playSound} onKeyPress={playSound}>
+          <button className="drum-pad" id="Heater-2" onClick={playSound}>
             W
             <audio
               className="clip"
               src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
               id="W"
+              preload='auto'
             ></audio>
           </button>
           <button className="drum-pad" id="Heater-3" onClick={playSound}>
@@ -46,6 +89,7 @@ function App() {
               className="clip"
               src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
               id="E"
+              preload='auto'
             ></audio>
           </button>
           <button className="drum-pad" id="Heater-4" onClick={playSound}>
