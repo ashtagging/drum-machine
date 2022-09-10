@@ -106,7 +106,7 @@ function App() {
 
   return (
     <div className="App">
-      <div id="drum-machine">
+      <div id="drum-machine" className="drum-machine">
         <h1 className="title" >Drum Machine</h1>
         <div className="keyboard">
           <Keyboard
@@ -115,7 +115,7 @@ function App() {
             setDisplaySound={setDisplaySound}
           />
         </div>
-        <div id="display" className="display">
+        <div id="display" className="display-text">
           {displaySound}
         </div>
       </div>

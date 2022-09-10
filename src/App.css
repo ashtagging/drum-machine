@@ -8,38 +8,75 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #d3d3fe;
+    background-color: red;
     font-family: comfortaa;
+    animation: changeBg 10s linear infinite;
 }
 
-.display {
-    background-color: rgb(92, 101, 100);
+@keyframes changeBg {
+    0% {
+        background-color: red;
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: green;
+    }
+    75% {
+        background-color: blue;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+.drum-machine {
+    background-color: white;
+    opacity: 1;
+    border-radius: 20px;
+    width: 400px;
+    border: 5px solid #0d000d;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5px;
+    row-gap: 5px;
+    padding: 0px 10px;
+}
+
+.display-text {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
+    color: #0d000d;
+    font-size: 2rem;
+    padding: 10px;
+    height: 40px;
+    font-weight: bold;
 }
 
 .title {
-    color: white;
+    color: #0d000d;
     padding: 10px;
-}
-
-.display-sound {
-    width: 150px;
-    color: white;
-    font-size: 1.5rem;
+    text-align: center;
 }
 
 .drum-pad {
     font-size: 3rem;
     padding: 20px;
-    margin: 10px;
+    margin: 5px;
     border-radius: 15px;
     cursor: pointer;
-    background-color: rgba(244, 62, 46);
+    background-color: #0d000d;
     color: white;
-    outline: none;
-    border: none;
-    width: 90px;
+    border: 5px solid #353535;
+}
+
+.drum-pad:hover {
+    background-color: #353535;
+    transition: 0.5s;
 }
